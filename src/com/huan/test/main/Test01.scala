@@ -18,7 +18,7 @@ object Test01 {
       //设置用户手机
       user.tel = UserRegisterTempelete.tel.apply(i % 4) + Random.nextInt()
       //设置性别
-      user.gender = UserRegisterTempelete.GenderEnum((i + Random.nextInt()) % 2).toString
+      user.gender = UserRegisterTempelete.GenderEnum((i + math.abs(Random.nextInt())) % 2).toString
       //设置生日
       cal.set(1980 + i % 20, 0 + i % 12, 1 + i % 28)
       var time = new SimpleDateFormat("yyyy-MM-dd").format(cal.getTime)
@@ -27,7 +27,9 @@ object Test01 {
       user.regIp = UserRegisterTempelete.regIp.get(i%4)
       //设置系统版本
       user.sysVersion = UserRegisterTempelete.sysVersion.get("ios").get
-      print(user.sysVersion)
+      //设置版本
+      user.softVersion = UserRegisterTempelete.softVersion.take(1).toString()
+      println(user.toString)
     }
   }
 }

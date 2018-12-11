@@ -14,7 +14,17 @@ class UserRegister {
   //系统版本 set实现
   var sysVersion = ""
   //软件版本 map实现
-  var softVersion = 1
+  var softVersion = ""
   //注册时间
   var regTime = 1
+
+  override def toString: String =
+    "userId:"+userId+
+    "tel:"+tel+
+    "gender:"+gender+
+    "birthday:"+birthday+
+    "regIp:"+regIp+
+    "sysVersion:"+sysVersion+
+    "softVersion:"+softVersion+
+    "regTime:"+regTime
 }
